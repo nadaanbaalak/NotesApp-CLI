@@ -35,7 +35,7 @@ const removeNote = function(title){
         console.log(chalk.red.inverse("Note Removed"));
     }
     else{
-        console.log(`Note with title : ${chalk.red(title)} doesn't exist!`);
+        console.log(chalk.yellow.inverse(`Note with title : ${chalk.bold(title)} doesn't exist!`));
     }
 }
 const listNotes = function(){
@@ -43,11 +43,11 @@ const listNotes = function(){
     if(retrievedData.length!==0)
     {
         retrievedData.forEach((note)=>{
-            console.log(`${chalk.bold(note.title)} : ${note.body}`);
+            console.log(`${chalk.bold(note.title)} : ${chalk.grey.inverse(note.body)}`);
         });
     }
     else {
-        console.log("No Note Present");
+        console.log(chalk.yellow.inverse("No Note Present"));
     }
     
 }
@@ -56,11 +56,11 @@ const readNote = function(title){
     const Note = retrievedData.find((note)=>note.title===title);
     if(Note!==undefined)
     {
-        console.log(`${chalk.red.bold(Note.title)} : ${chalk.bold(Note.body)}`)
+        console.log(`${chalk.blue.bold(Note.title)} : ${chalk.bold(Note.body)}`)
     }
     else
     {
-        console.log('Note doesn\'t exist');
+        console.log(chalk.yellow.inverse('Note doesn\'t exist'));
     }
 }
 function loadNotes()
