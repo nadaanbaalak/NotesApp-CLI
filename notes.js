@@ -19,10 +19,10 @@ const addNote = function (title,body){
         };
         retrievedData.push(noteToAdd);
         saveNotes(retrievedData);
-        console.log('Note Added');
+        console.log(chalk.green.inverse('Note Added Successfully'));
     }
     else{
-        console.log('Note title already taken. Try with a different title');
+        console.log(chalk.red.inverse('Note title already taken. Try with a different title'));
     }
 }
 const removeNote = function(title){
@@ -32,7 +32,7 @@ const removeNote = function(title){
     saveNotes(retrievedData);
     if(initialRecord!== retrievedData.length)
     {
-        console.log("Note Removed");
+        console.log(chalk.red.inverse("Note Removed"));
     }
     else{
         console.log(`Note with title : ${chalk.red(title)} doesn't exist!`);

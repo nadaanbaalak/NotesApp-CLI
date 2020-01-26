@@ -1,6 +1,4 @@
 const notes = require('./notes.js');
-const validator = require('validator');
-const chalk = require('chalk');
 const yargs = require('yargs');
 //console.log(process.argv);
 
@@ -38,7 +36,6 @@ yargs.command({
     },
     handler: function(argv)
     {
-        //console.log(chalk.red.bold('Removing the note'));
         notes.removeNote(argv.title);
     }
 });
